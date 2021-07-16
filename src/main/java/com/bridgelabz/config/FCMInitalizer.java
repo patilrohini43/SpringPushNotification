@@ -15,12 +15,11 @@ import com.google.firebase.messaging.FirebaseMessaging;
 @Configuration
 public class FCMInitalizer {
 
-
 	
 	 @Bean
 	    FirebaseMessaging firebaseMessaging() throws IOException {
 	        GoogleCredentials googleCredentials = GoogleCredentials
-	                .fromStream(new ClassPathResource("google/push1-16180-firebase-adminsdk-g1gyx-b486bf823e.json").getInputStream());
+	                .fromStream(new ClassPathResource("google/pushnotify-685ce-firebase-adminsdk-opnm6-f804770b4b.json").getInputStream());
 	        FirebaseOptions firebaseOptions = FirebaseOptions
 	                .builder()
 	                .setCredentials(googleCredentials)
