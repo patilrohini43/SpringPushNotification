@@ -10,13 +10,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bridgelabz.model.PushData;
 import com.bridgelabz.service.FirebaseMessagingService;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.FirebaseMessagingException;
 
 @Controller
 public class PushController {
 
 	@Autowired
-	 FirebaseMessagingService firebaseService;
+	FirebaseMessagingService firebaseService;
 
 	   
 	    @RequestMapping("/send-notification")
@@ -24,6 +25,7 @@ public class PushController {
 	    @PostMapping
 	    public String sendNotification(@RequestBody PushData note,
 	                                   @RequestParam String token) throws FirebaseMessagingException {
+	    	System.out.println("start");
 	        return firebaseService.sendNotification(note, token);
 	    }
 }
